@@ -1,0 +1,106 @@
+body{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    box-sizing: content-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 5%;
+}
+
+.question{
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+}
+
+.container-answer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 50px;
+    padding: 8px;
+}
+
+.erase{
+    color: red;
+    display: none;
+    cursor: pointer;
+}
+
+.answer{
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.answer::placeholder{
+    color: darkgrey;
+    font-weight: bold;
+}
+/* 
+.answer:invalid{
+    border: 1px solid red;
+}
+.answer:valid{
+    border: 1px solid rgb(8, 240, 0);
+} */
+
+.button-send{
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+    transition: all 2s;
+    cursor: pointer;
+}
+
+.button-send--active{
+    background-color: darkgreen;
+}
+
+.button-send:hover{
+    transform: scale(140%);
+}
+
+.button-send>i{
+    color: rgb(255, 255, 255);
+}
+
+.message{
+    color: blanchedalmond;
+}
+
+.button-next{
+    display: none;
+    gap: 10px;
+    padding: 8px;
+    background-color: green;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.button-next:hover{
+    transform: scale(120%);
+}
