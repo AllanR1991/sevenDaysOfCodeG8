@@ -16,8 +16,33 @@
   <body>
     <!-- main>label{Pergunta}.question+input[type="text" placeholder="Digite sua resposta."].answer -->
     <main>
-   
-
+      
+      <fieldset class="container-options">
+        <legend class="question-options" for="linguagem">Você gostaria de na área de Front-End ou seguir na área de Back-End?</legend>
+        <div class="option">
+          <input type="radio" class="options" name="choise" id="front" value="Front-End">
+          <label for="front">Front-End</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="options" name="choise" id="back" value="Back-End">
+          <label for="back">Back-End</label>
+        </div>
+        <button type="button" class="button-send">Proximo</button>
+      </fieldset>
+      
+      
+      
+      <fieldset class="container-multi-answer">
+        <div>
+          <label for="linguagem">Quais as tecnologias que você gostaria de se especializar ou conhecer?</label>
+          <div>
+            <input type="text" name="linguagens" id="linguagem" class="input-linguagens">
+            <button type="button" class="button-next">Inserir mais</button>
+          </div>
+        </div>
+        <button type="button" class="button-finish">Finalilzar</button>
+      </fieldset>
+      
     </main>
   </body>
 </html>
