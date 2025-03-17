@@ -4,11 +4,12 @@ let container = document.querySelector(".container-options");
 let containerMultiAnswer = document.querySelector('.container-multi-answer');
 let buttonNext = document.querySelector(".button-next");
 // legendQuestion.innerHTML = ""
+let answerButtonRadio = document.querySelector(".options:checked");
 
 let questions = [
   {
     question:
-      "Você gostaria de na área de Front-End ou seguir na área de Back-End?",
+    "Você gostaria de na área de Front-End ou seguir na área de Back-End?",
     options: ["Front-End", "Back-End"],
     choise: null,
   },
@@ -86,12 +87,18 @@ const tecnologias = {
   PyTorch: "Framework flexível para aprendizado profundo.",
 };
 
+//inicia sem ter dados selecionados.
+answerButtonRadio.checked = false;
+
+//Regex contendo todos os dados possiveis no objeto.
 const regexTecnologias = new RegExp(
   `^(${Object.keys(tecnologias).join("|")})$`,
   "i"
 );
 
 let index = 0;
+
+
 
 function showNewQuestion() {
   let legend = document.querySelector(".question-options");
@@ -137,10 +144,16 @@ buttonNext.addEventListener('click',()=>{
 })
 
 function registerLinguages(){
-  const inputLinguages = document.querySelector('.input-linguagens').value;
+  let inputLinguages = document.querySelector('.input-linguagens');
+  let valueInput = inputLinguages.value;
 
-  if(inputLinguages){
-    linguagens.push(inputLinguages);
+  if(valueInput){
+    if(inputLinguages.checked){
+      inputLinguages.checked = false;
+    }
+    linguagens.push(valueInput);
+    inputLinguages.value = "";
+    inputLinguages.focus();
   }
 
   console.log(linguagens)
@@ -148,20 +161,21 @@ function registerLinguages(){
 
 
 buttonSend.addEventListener("click", () => {
-  let answerButtonRadio = document.querySelector(".options:checked")?.value;
+  const answerButtonRadio = document.querySelector(".options:checked");
+  const value = answerButtonRadio?.value;
   let indexMax = 2;
-  if (answerButtonRadio) {
-    registerAnswer(answerButtonRadio);
+  if (value) {
+    registerAnswer(value);
 
     if (index != indexMax) {
       index++;
     }
 
-    verifyAnswer(answerButtonRadio);
+    verifyAnswer(value);
 
     if (
-      answerButtonRadio != "Especializando" &&
-      answerButtonRadio != "FullStack"
+      value != "Especializando" &&
+      value != "FullStack"
     ) {
       showNewQuestion();
     }
