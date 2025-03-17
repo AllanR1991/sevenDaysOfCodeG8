@@ -2,6 +2,7 @@ let legendQuestion = document.querySelector(".question-options");
 let buttonSend = document.querySelector(".button-send");
 let container = document.querySelector(".container-options");
 let containerMultiAnswer = document.querySelector('.container-multi-answer');
+let buttonNext = document.querySelector(".button-next");
 // legendQuestion.innerHTML = ""
 
 let questions = [
@@ -129,6 +130,22 @@ function showNewQuestion() {
 function registerAnswer(answer) {
   questions[index].choise = answer;
 }
+
+
+buttonNext.addEventListener('click',()=>{
+  registerLinguages();
+})
+
+function registerLinguages(){
+  const inputLinguages = document.querySelector('.input-linguagens').value;
+
+  if(inputLinguages){
+    linguagens.push();
+  }
+
+  console.log(linguagens)
+}
+
 
 buttonSend.addEventListener("click", () => {
   let answerButtonRadio = document.querySelector(".options:checked")?.value;
