@@ -140,7 +140,7 @@ function registerLinguages(){
   const inputLinguages = document.querySelector('.input-linguagens').value;
 
   if(inputLinguages){
-    linguagens.push();
+    linguagens.push(inputLinguages);
   }
 
   console.log(linguagens)
