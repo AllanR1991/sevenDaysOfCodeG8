@@ -1,7 +1,7 @@
 let legendQuestion = document.querySelector(".question-options");
 let buttonSend = document.querySelector(".button-send");
 let container = document.querySelector(".container-options");
-
+let containerMultiAnswer = document.querySelector('.container-multi-answer');
 // legendQuestion.innerHTML = ""
 
 let questions = [
@@ -179,5 +179,6 @@ function verifyAnswer(answer) {
   } else if (answer == "Especializando" || answer == "FullStack") {
     //deve sumir com a view de perungas e opções e exibir a outra
     container.style.display = "none";
+    containerMultiAnswer.style.display = "flex"
   };
 };
